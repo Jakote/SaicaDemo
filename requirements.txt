@@ -9,4 +9,6 @@ pytz
 six
 sqlparse
 tzdata
+pyodbc
+django-pyodbc-azure
 

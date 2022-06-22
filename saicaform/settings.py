@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-m)r^4mg-dby)t9gwi67zfwy=no$-)21_52bxehay_bh!sf9y-i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['saicaforms.azurewebsites.net', 'localhost', '127.0.0.1']
 
 
 # Application definition
