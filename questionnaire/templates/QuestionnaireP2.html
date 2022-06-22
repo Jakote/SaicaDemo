@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,10 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style type="text/css">
-        body{
+        a{
+            text-decoration:none;
+            color: #FFFFFF;
+        }
+
+        body {
             margin: 0px;
             padding: 0px;
         }
+
         .container {
             background-color: #E6EDF2;
             padding: 0px 50px;
@@ -90,9 +95,33 @@
             color: #333;
         }
 
-        .text-box{
+        .text-box {
             color: #333;
+            border-color: #555;
+            border-width: 1.5px;
+            border-style: solid;
+            height: 26px;
+            width: 100%;
+            margin: 0px 20px;
+            accent-color: #0078D4;
+        }
+
+        .dropdown{
+            color: #333;
+            border-color: #555;
+            height: 26px;
+            width: 300px;
+            margin: 0px 20px;
+            accent-color: #0078D4;
+            background-color: #e5e5e5;
             border-color: #333;
+            border-width: 1px;
+            border-style: solid;
+            cursor: pointer;
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 6px 20px;
         }
     </style>
 </head>
@@ -100,45 +129,9 @@
 <body>
     <div class="container">
         <div class="intro-content">
-            <h1 class="intro-content-heading">
+            <h1 class="title">
                 SAICA Professional Exam Survey
             </h1>
-            <h3 class="text">Pilot Session</h3>
-            <p class="text">Dear Respondent,</p>
-            <p class="text">The South African Institute of Chartered Accountants (SAICA) commissioned a research project
-                aimed at obtaining insights into the various aspects of the value chain to understand the key areas
-                associated with the decline and/or inconsistent pass rates across the professional exams since the
-                inception of ITC and APC assessments through to the 2020 sittings.
-                <br><br>
-                This research is conducted by an independent research team and your responses will be received directly
-                by the research team and not via SAICA. Participation in the research is voluntary and kept
-                confidential. Participation can be withdrawn at any time with no negative consequence and participant’s
-                responses will not be used where consent is withdrawn.
-                <br><br>
-                The personal information we collect and/or verify, and process will only be processed for the purpose it
-                is collected for. All inputs will be treated as anonymous. Any unique identifiers (ID/SAICA numbers)
-                will only be used for the purposes of validating that only ITC and APC candidates during the specified
-                period participate in the research.
-                <br><br>
-                The outcomes of this research will assist the profession to implement appropriate initiatives to assist
-                candidates in their journey towards the CA(SA) qualification.
-                <br><br>
-                The survey should take you about 20 minutes to complete. I hope you will take the time to complete this
-                survey.
-                <br><br>
-                Please assist us in completing the survey by 24 June 2022.
-                <br><br>
-                Professor Lungile Ntsalaze CA(SA)
-                <br>
-                Team Leader
-                <br>
-                SAICA Independent Research
-                <br>
-                <span class="link">lntsalaze@gmail.com</span>
-                <br>
-                +27731742258
-            </p>
-
             <!-- <input type="radio" id="agree" name="consent" value="Agree">
             <label for="agree">Agree</label><br>
             <input type="radio" id="disagree" name="consent" value="Disagree">
@@ -152,117 +145,50 @@
                     <p class="required"><span class="required-star">*</span>Required</p>
                 </div>
             </div>
-            <p class="section-title" style="color:#0078D4">Consent and Scope Applicability</p>
+            <p class="section-title" style="color:#0078D4">Demographic Information</p>
             <div class="question-block">
-                <p><span class="question-no">1. </span>Do you agree to continue with completing
-                    this survey?<br><br>If you agree, you acknowledge that you will be
-                    required to provide information requested in this survey and that you
-                    consent to it being processed by
-                    us.
-                </p>
+                <p><span class="question-no">3. </span>Please enter your ID number or SAICA number</p>
+                <input type="text" class="text-box">
+            </div>
 
-                <select id="lan">
-                    <option value="en" selected>English</option>
-                    <option value="es">Español</option>
-                    <option value="pt">Português</option>
-                </select>
-               {% for ques in questions %}
-               <p><span class="question-no">{{ques.id}} </span>{{ ques.question|linebreaks }}</p>
-               {% endfor %}
-               
-                <p>Language Drop down</p>
-                <select class="text-box" >
+            
+
+            <div class="question-block">
+                <p><span class="question-no">4. </span>Gender<span class="required-star">*</span></p>
+                <div role="radiogroup">
+                    <input type="radio" name='q4' class="radio" id="male" value="Male">
+                    <label for="male">Male</label><br><br>
+                    <input type="radio" name='q4' class="radio" id="female" value="Female">
+                    <label for="female">Female</label><br><br>
+                    <input type="radio" name='q4' class="radio" id="nosay" value="Prefer">
+                    <label for="nosay">Prefer not to say</label><br><br>
+                </div>
+            </div>
+            <!-- Dropdown -->
+            <div class="question-block">
+                <p><span class="question-no">5. </span>Race<span class="required-star">*</span></p>
+                <div class="dropdown">
+                    <p>Race</p><p style="transform: rotate(90deg);">></p>
+                </div>
+            </div>
+            <div class="question-block">
+                <p><span class="question-no">6. </span>Home Language<span class="required-star">*</span></p>
+              
+                  
+                <select class="dropdown" >
                    {% for language in languages %}  
                         <option class="text-box" value="{{ language.pk }}"> {{language.languages}}</option>
                   {% endfor %}   
                 </select>
-
-                <p>Matric Schools Drop down</p>
-                <select class="text-box" >
-                   {% for matricSchool in matricSchools %}  
-                        <option class="text-box" value="{{ matricSchool.pk }}"> {{matricSchool.schoolname}}</option>
-                  {% endfor %}   
-                </select>
-
-                <p>Matric Subjects Drop down</p>
-                <select class="text-box" >
-                   {% for matricSubject in matricSubjects %}  
-                        <option class="text-box" value="{{ matricSubject.pk }}"> {{matricSubject.subjects}}</option>
-                  {% endfor %}   
-                </select>
-
-                <p>Post-Grad Qualifications Drop down</p>
-                <select class="text-box" >
-                   {% for postGradQual in postGradQualifications %}  
-                        <option class="text-box" value="{{ postGradQual.pk }}"> {{postGradQual.qualification}}</option>
-                  {% endfor %}   
-                </select>
-
-                <p>Post-Grad Universities Drop down</p>
-                <select class="text-box" >
-                   {% for postGradUni in postGradUniverisities %}  
-                        <option class="text-box" value="{{ postGradUni.pk }}"> {{postGradUni.university}}</option>
-                  {% endfor %}   
-                </select>
-
-                <p>Under-Grad Qualifications Drop down</p>
-                <select class="text-box" >
-                   {% for undergradQual in undergradQualifications %}  
-                        <option class="text-box" value="{{ undergradQual.pk }}"> {{undergradQual.qualification}}</option>
-                  {% endfor %}   
-                </select>
-
-                <p>Training Electives Drop down</p>
-                <select class="text-box" >
-                   {% for trainingElec in trainingElectives %}  
-                        <option class="text-box" value="{{ trainingElec.pk }}"> {{trainingElec.trainingelective}}</option>
-                  {% endfor %}   
-                </select>
-
-
-                <p>Under-Grad Universities Drop down</p>
-                <select class="text-box" >
-                   {% for undergradUni in undergradUniversities %}  
-                        <option class="text-box" value="{{ undergradUni.pk }}"> {{undergradUni.universityname}}</option>
-                  {% endfor %}   
-                </select>
+                <p style="transform: rotate(90deg);"></p>
                 
-                
-                <br>
-                <p>If you disagree, no further input is required.</p>
-                <div role="radiogroup">
-                    <input type="radio" name='consent' class="radio" id="agree" aria-labelledby="Agree" value="Agree">
-                    <label for="agree">Agree</label><br><br>
-                    <input type="radio" name='consent' class="radio" id="disagree" aria-labelledby="Disagree"
-                        value="Disagree">
-                    <label for="disagree">Disagree</label><br><br>
-                </div>
-
             </div>
-
-            <div class="question-block">
-                <p><span class="question-no">2. </span>Did you sit for ITC and/or APC examinations
-                    during the period 'January 2012 - November 2020' and 'November 2014 -
-                    December 2020' respectively?<br><br>If your
-                    answer is "No", no further input is required. Thank
-                    you
-                </p>
-                <div role="radiogroup">
-                    <input type="radio" name='q2' class="radio" id="yes" value="Agree">
-                    <label for="yes">Yes</label><br><br>
-                    <input type="radio" name='q2' class="radio" id="no" value="Disagree">
-                    <label for="no">No</label><br><br>
-                </div>
-
-            </div>
-            <button class="btn-next" type="button">Next</button><br><br>
+            <button class="btn-next" type="button"><a href="{% url 'questionnaire' %}">Back</a></button><br><br>
+            <button class="btn-next" type="button"><a href="{% url 'questionnairep3' %}">Next</a></button><br><br>
         </div>
 
     </div>
     </div>
-    <script>
-    
-    </script>
 </body>
 
 </html>

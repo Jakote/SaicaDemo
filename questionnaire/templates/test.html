@@ -1,0 +1,12 @@
+<h1>Home</h1>
+
+<form method="post">
+    {% csrf_token %}
+    Name: <input type="text" name="name">
+    <button type="submit">Submit</button>
+</form>
+<h1> You have entered {{data}}</h1>
+
+<table name="table">
+
+</table>

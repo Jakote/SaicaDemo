@@ -515,3 +515,6 @@ class TestModel(models.Model):
 
     def __str__(self):
         return self.name
+
+class Table(models.Model):
+    tablerows = models.CharField(max_length=2)

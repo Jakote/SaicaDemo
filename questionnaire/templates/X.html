@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,11 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style type="text/css">
-        body {
+        body{
             margin: 0px;
             padding: 0px;
         }
-
         .container {
             background-color: #E6EDF2;
             padding: 0px 50px;
@@ -90,9 +90,9 @@
             color: #333;
         }
 
-        a{
-            text-decoration:none;
-            color: #FFFFFF;
+        .text-box{
+            color: #333;
+            border-color: #333;
         }
     </style>
 </head>
@@ -160,6 +160,74 @@
                     consent to it being processed by
                     us.
                 </p>
+
+                <select id="lan">
+                    <option value="en" selected>English</option>
+                    <option value="es">Español</option>
+                    <option value="pt">Português</option>
+                </select>
+               {% for ques in questions %}
+               <p><span class="question-no">{{ques.id}} </span>{{ ques.question|linebreaks }}</p>
+               {% endfor %}
+               
+                <p>Language Drop down</p>
+                <select class="text-box" >
+                   {% for language in languages %}  
+                        <option class="text-box" value="{{ language.pk }}"> {{language.languages}}</option>
+                  {% endfor %}   
+                </select>
+
+                <p>Matric Schools Drop down</p>
+                <select class="text-box" >
+                   {% for matricSchool in matricSchools %}  
+                        <option class="text-box" value="{{ matricSchool.pk }}"> {{matricSchool.schoolname}}</option>
+                  {% endfor %}   
+                </select>
+
+                <p>Matric Subjects Drop down</p>
+                <select class="text-box" >
+                   {% for matricSubject in matricSubjects %}  
+                        <option class="text-box" value="{{ matricSubject.pk }}"> {{matricSubject.subjects}}</option>
+                  {% endfor %}   
+                </select>
+
+                <p>Post-Grad Qualifications Drop down</p>
+                <select class="text-box" >
+                   {% for postGradQual in postGradQualifications %}  
+                        <option class="text-box" value="{{ postGradQual.pk }}"> {{postGradQual.qualification}}</option>
+                  {% endfor %}   
+                </select>
+
+                <p>Post-Grad Universities Drop down</p>
+                <select class="text-box" >
+                   {% for postGradUni in postGradUniverisities %}  
+                        <option class="text-box" value="{{ postGradUni.pk }}"> {{postGradUni.university}}</option>
+                  {% endfor %}   
+                </select>
+
+                <p>Under-Grad Qualifications Drop down</p>
+                <select class="text-box" >
+                   {% for undergradQual in undergradQualifications %}  
+                        <option class="text-box" value="{{ undergradQual.pk }}"> {{undergradQual.qualification}}</option>
+                  {% endfor %}   
+                </select>
+
+                <p>Training Electives Drop down</p>
+                <select class="text-box" >
+                   {% for trainingElec in trainingElectives %}  
+                        <option class="text-box" value="{{ trainingElec.pk }}"> {{trainingElec.trainingelective}}</option>
+                  {% endfor %}   
+                </select>
+
+
+                <p>Under-Grad Universities Drop down</p>
+                <select class="text-box" >
+                   {% for undergradUni in undergradUniversities %}  
+                        <option class="text-box" value="{{ undergradUni.pk }}"> {{undergradUni.universityname}}</option>
+                  {% endfor %}   
+                </select>
+                
+                
                 <br>
                 <p>If you disagree, no further input is required.</p>
                 <div role="radiogroup">
@@ -187,14 +255,14 @@
                 </div>
 
             </div>
-            <div>
-                
-                <button class="btn-next" type="button"><a href="{% url 'questionnairep2' %}">Next</a></button><br><br>
-            </div>
+            <button class="btn-next" type="button">Next</button><br><br>
         </div>
 
     </div>
     </div>
+    <script>
+    
+    </script>
 </body>
 
 </html>
