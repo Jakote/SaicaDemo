@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        .container {
+            background-color: #E6EDF2;
+            padding: 0px 50px;
+            font-family: sans-serif;
+        }
+
+        .link {
+            text-decoration: underline;
+        }
+
+        .intro-content {
+            background-color: #0078D4;
+            padding: 50px;
+            width: 750px;
+            margin: 0px auto;
+            color: #FFFFFF;
+        }
+
+        .form-body {
+            background-color: #FFFFFF;
+            color: #333;
+            width: 750px;
+            margin: 0px auto;
+            padding: 0px 50px;
+        }
+
+        .intro-content-heading {
+            color: #FFFFFF;
+            font-size: 38px;
+            font-weight: 700;
+        }
+
+        .text {
+            color: #FFFFFF;
+            font-family: sans-serif;
+        }
+
+        .radio {
+            color: #0078D4;
+            accent-color: #0078D4;
+        }
+
+        .required-star {
+            color: rgb(208, 37, 37);
+        }
+
+        .required {
+            color: #777;
+        }
+
+        .required-container {
+            padding: 30px 0px 0px 0px;
+        }
+
+        .question-block {
+            margin: 60px 0px;
+        }
+
+        .question-no {
+            font-weight: 600;
+        }
+
+        .btn-next {
+            height: 40px;
+            width: 140px;
+            background-color: #0078D4;
+            border: none;
+            color: #FFFFFF;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="intro-content">
+            <h1 class="intro-content-heading">
+                SAICA Professional Exam Survey
+            </h1>
+            <h3 class="text">Pilot Session</h3>
+            <p class="text">Dear Respondent,</p>
+            <p class="text">The South African Institute of Chartered Accountants (SAICA) commissioned a research project
+                aimed at obtaining insights into the various aspects of the value chain to understand the key areas
+                associated with the decline and/or inconsistent pass rates across the professional exams since the
+                inception of ITC and APC assessments through to the 2020 sittings.
+                <br><br>
+                This research is conducted by an independent research team and your responses will be received directly
+                by the research team and not via SAICA. Participation in the research is voluntary and kept
+                confidential. Participation can be withdrawn at any time with no negative consequence and participant’s
+                responses will not be used where consent is withdrawn.
+                <br><br>
+                The personal information we collect and/or verify, and process will only be processed for the purpose it
+                is collected for. All inputs will be treated as anonymous. Any unique identifiers (ID/SAICA numbers)
+                will only be used for the purposes of validating that only ITC and APC candidates during the specified
+                period participate in the research.
+                <br><br>
+                The outcomes of this research will assist the profession to implement appropriate initiatives to assist
+                candidates in their journey towards the CA(SA) qualification.
+                <br><br>
+                The survey should take you about 20 minutes to complete. I hope you will take the time to complete this
+                survey.
+                <br><br>
+                Please assist us in completing the survey by 24 June 2022.
+                <br><br>
+                Professor Lungile Ntsalaze CA(SA)
+                <br>
+                Team Leader
+                <br>
+                SAICA Independent Research
+                <br>
+                <span class="link">lntsalaze@gmail.com</span>
+                <br>
+                +27731742258
+            </p>
+
+            <!-- <input type="radio" id="agree" name="consent" value="Agree">
+            <label for="agree">Agree</label><br>
+            <input type="radio" id="disagree" name="consent" value="Disagree">
+            <label for="disagree">Disagree</label> -->
+
+
+        </div>
+        <div class="form-body">
+            <div class="required-container">
+                <div>
+                    <p class="required"><span class="required-star">*</span>Required</p>
+                </div>
+            </div>
+            <p class="section-title" style="color:#0078D4">Consent and Scope Applicability</p>
+            <div class="question-block">
+                <p><span class="question-no">1. </span>Do you agree to continue with completing
+                    this survey?<br><br>If you agree, you acknowledge that you will be
+                    required to provide information requested in this survey and that you
+                    consent to it being processed by
+                    us.
+                </p>
+                <br>
+                <p>If you disagree, no further input is required.</p>
+                <div role="radiogroup">
+                    <input type="radio" name='consent' class="radio" id="agree" aria-labelledby="Agree" value="Agree">
+                    <label for="agree">Agree</label><br><br>
+                    <input type="radio" name='consent' class="radio" id="disagree" aria-labelledby="Disagree"
+                        value="Disagree">
+                    <label for="disagree">Disagree</label><br><br>
+                </div>
+
+            </div>
+
+            <div class="question-block">
+                <p><span class="question-no">2. </span>Did you sit for ITC and/or APC examinations
+                    during the period 'January 2012 - November 2020' and 'November 2014 -
+                    December 2020' respectively?<br><br>If your
+                    answer is "No", no further input is required. Thank
+                    you
+                </p>
+                <div role="radiogroup">
+                    <input type="radio" name='q2' class="radio" id="yes" value="Agree">
+                    <label for="yes">Yes</label><br><br>
+                    <input type="radio" name='q2' class="radio" id="no" value="Disagree">
+                    <label for="no">No</label><br><br>
+                </div>
+
+            </div>
+            <button class="btn-next" type="button">Next</button><br><br>
+        </div>
+
+    </div>
+    </div>
+</body>
+
+</html>
