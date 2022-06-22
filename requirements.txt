@@ -1,6 +1,6 @@
 asgiref
 distlib
-Django
+Django==2.1.7
 django-mssql-backend
 filelock
 mssql-django
